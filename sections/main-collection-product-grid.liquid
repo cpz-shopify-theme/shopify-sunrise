@@ -49,6 +49,7 @@
           sort: '{{ sort_by }}',
           sortCollection(){
             this.loading = true;
+            console.log('url:'+'/collections/{{ collection.handle }}?sort_by=' + this.sort);
             fetch('/collections/{{ collection.handle }}?sort_by=' + this.sort)
               .then(response => response.text())
               .then(data => {
